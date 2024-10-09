@@ -35,7 +35,11 @@ public class Main {
             osMessage = "чего-нибудь";
         }
         boolean isLightVersionNeeded = clientDeviceYear < YEAR_MILESTONE_1;
-        System.out.printf("Установите %sверсию приложения для %s по ссылке", isLightVersionNeeded ? "облегченную " : "", osMessage);
+        if (isLightVersionNeeded) {
+            System.out.printf("Установите облегчённую версию приложения для %s по ссылке", osMessage);
+        } else {
+            System.out.printf("Установите версию приложения для %s по ссылке", osMessage);
+        }
         System.out.println();
 
         System.out.println(divider);
@@ -46,7 +50,11 @@ public class Main {
         if (year > LEAP_YEAR_BORN && ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)) {
             isYearLeap = true;
         }
-        System.out.printf("%d год %sявляется високосным", year, isYearLeap ? "" : "не ");
+        if (isYearLeap) {
+            System.out.printf("%d год является високосным", year);
+        } else {
+            System.out.printf("%d год не является високосным", year);
+        }
         System.out.println();
 
         System.out.println(divider);
