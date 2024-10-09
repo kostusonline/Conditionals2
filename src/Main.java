@@ -8,13 +8,14 @@ public class Main {
         // и лучше бы 0 было чем-то неизвестным, чтобы выбор
         // нужно было сделать намеренно, а не оставлять значение по умолчанию
         // для переменной clientOS
-        final int OS_IOS = 0;
-        final int OS_ANDROID = 1;
-        int clientOS = OS_ANDROID;
+        // по именованию: https://google.github.io/styleguide/javaguide.html#s5-naming
+        final int osiOS = 0;
+        final int osAndroid = 1;
+        int clientOS = osAndroid;
         String osMessage;
-        if (OS_IOS == clientOS) {
+        if (osiOS == clientOS) {
             osMessage = "iOS";
-        } else if (OS_ANDROID == clientOS) {
+        } else if (osAndroid == clientOS) {
             osMessage = "Android";
         } else {
             osMessage = "чего-нибудь";
@@ -24,17 +25,17 @@ public class Main {
 
         System.out.println(divider);
         System.out.println("Задача #2");
-        final int YEAR_MILESTONE_1 = 2015;
-        clientOS = OS_ANDROID;
+        final int yearMilestone1 = 2015;
+        clientOS = osAndroid;
         int clientDeviceYear = 2014;
-        if (OS_IOS == clientOS) {
+        if (osiOS == clientOS) {
             osMessage = "iOS";
-        } else if (OS_ANDROID == clientOS) {
+        } else if (osAndroid == clientOS) {
             osMessage = "Android";
         } else {
             osMessage = "чего-нибудь";
         }
-        boolean isLightVersionNeeded = clientDeviceYear < YEAR_MILESTONE_1;
+        boolean isLightVersionNeeded = clientDeviceYear < yearMilestone1;
         if (isLightVersionNeeded) {
             System.out.printf("Установите облегчённую версию приложения для %s по ссылке", osMessage);
         } else {
@@ -44,10 +45,10 @@ public class Main {
 
         System.out.println(divider);
         System.out.println("Задача #3");
-        final int LEAP_YEAR_BORN = 1584;
+        final int leapYearBorn = 1584;
         int year = 2024; // 1900, 1992, 2000, 2004, 2008, 2012, 2016, 2020
         boolean isYearLeap = false;
-        if (year > LEAP_YEAR_BORN && ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)) {
+        if (year > leapYearBorn && ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0)) {
             isYearLeap = true;
         }
         if (isYearLeap) {
@@ -59,9 +60,9 @@ public class Main {
 
         System.out.println(divider);
         System.out.println("Задача #4");
-        final int NO_DELIVERY = -1;
+        final int noDelivery = -1;
         int deliveryDistance = 95;
-        int deliveryDays = NO_DELIVERY;
+        int deliveryDays = noDelivery;
         if (deliveryDistance < 20) {
             deliveryDays = 1;
         } else if (deliveryDistance >= 20 && deliveryDistance < 60) {
@@ -69,7 +70,7 @@ public class Main {
         } else if (deliveryDistance >= 60 && deliveryDistance <= 100) {
             deliveryDays = 3;
         }
-        if (NO_DELIVERY == deliveryDays) {
+        if (noDelivery == deliveryDays) {
             System.out.printf("Дистанция %d км слишком велика для доставки", deliveryDistance);
             System.out.println();
         } else {
